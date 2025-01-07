@@ -9,8 +9,7 @@ import webVitals from '@astrojs/web-vitals';
 import astroExpressiveCode from 'astro-expressive-code';
 import { defineConfig } from 'astro/config';
 import houston from './houston.theme.json';
-
-import node from '@astrojs/node';
+import h3Adapter from 'astro-h3-adapter';
 
 /* https://docs.netlify.com/configure-builds/environment-variables/#read-only-variables */
 const NETLIFY_PREVIEW_SITE = process.env.CONTEXT !== 'production' && process.env.DEPLOY_PRIME_URL;
@@ -64,7 +63,5 @@ export default defineConfig({
       contentIntellisense: true,
 	},
 
-  adapter: node({
-    mode: 'standalone',
-  }),
+  adapter: h3Adapter(),
 });
