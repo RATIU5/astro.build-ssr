@@ -7,7 +7,7 @@
 		"preinstall": "npx only-allow pnpm",
 		"dev": "astro dev",
 		"start": "astro dev",
-		"build": "astro build",
+		"build": "astro build --remote",
 		"build:force-db": "WITH_DB=true astro build --remote",
 		"preview": "astro preview",
 		"deploy": "wrangler deploy",
