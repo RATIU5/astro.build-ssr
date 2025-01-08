@@ -20,7 +20,7 @@ export default defineConfig({
   site: NETLIFY_PREVIEW_SITE || 'https://astro.build',
   prefetch: true,
 	server: {
-		port: 4322,
+		port: 8397,
 	},
   integrations: [
       tailwind({
