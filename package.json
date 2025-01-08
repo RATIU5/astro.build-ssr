@@ -55,10 +55,11 @@
 		"solid-js": "^1.9.3",
 		"tailwindcss": "^3.4.16",
 		"typescript": "^5.7.2",
-		"wrangler": "^3.100.0",
 		"xss": "^1.0.15"
 	},
 	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20241230.0",
+    "wrangler": "^3.100.0",
 		"@actions/core": "^1.11.1",
 		"@octokit/graphql": "^7.0.2",
 		"gray-matter": "^4.0.3",
