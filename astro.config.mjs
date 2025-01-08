@@ -7,7 +7,6 @@ import solid from '@astrojs/solid-js';
 import tailwind from '@astrojs/tailwind';
 import webVitals from '@astrojs/web-vitals';
 import astroExpressiveCode from 'astro-expressive-code';
-import h3Adapter from 'astro-h3-adapter';
 import { defineConfig } from 'astro/config';
 import houston from './houston.theme.json';
 
