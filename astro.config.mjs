@@ -7,9 +7,11 @@ import solid from '@astrojs/solid-js';
 import tailwind from '@astrojs/tailwind';
 import webVitals from '@astrojs/web-vitals';
 import astroExpressiveCode from 'astro-expressive-code';
+import h3Adapter from 'astro-h3-adapter';
 import { defineConfig } from 'astro/config';
 import houston from './houston.theme.json';
-import h3Adapter from 'astro-h3-adapter';
+
+import cloudflare from '@astrojs/cloudflare';
 
 /* https://docs.netlify.com/configure-builds/environment-variables/#read-only-variables */
 const NETLIFY_PREVIEW_SITE = process.env.CONTEXT !== 'production' && process.env.DEPLOY_PRIME_URL;
@@ -19,10 +21,12 @@ export default defineConfig({
   output: "server",
   site: NETLIFY_PREVIEW_SITE || 'https://astro.build',
   prefetch: true,
-	server: {
-		host: true,
-		port: 8397,
+
+  server: {
+      host: true,
+      port: 8397,
 	},
+
   integrations: [
       tailwind({
           applyBaseStyles: false,
@@ -50,21 +54,21 @@ export default defineConfig({
               },
           },
       },
-	],
+    ],
 
   image: {
       domains: ['v1.screenshot.11ty.dev', 'storage.googleapis.com'],
-	},
+    },
 
   vite: {
       ssr: {
           noExternal: ['smartypants'],
       },
-	},
+    },
 
   experimental: {
       contentIntellisense: true,
-	},
+    },
 
-  adapter: h3Adapter(),
+  adapter: cloudflare(),
 });
